@@ -2,7 +2,7 @@ var loser = false;
 var cheat = false;
 windows.onload = function(){
   $("start").onclick = start;
-  $("start").onmouseover = hover;
+  $("maze").onmouseover = onCheat;
   $("end").onmouseleave = end;
 
   var wall = $$("#maze div.boundary");
@@ -36,12 +36,12 @@ function end() {
 function start() {
       lose = false;
       cheat = false;
-      $("status").textContent = "Find the end!";
+      $("status").textContent = "Traverse the path to the end!";
       var wall = $$("#maze div.boundary");
       for (var i = 0; i < boundaries.length; i++) {
           wall[i].removeClassName("youlose");
       }
   }
-function cheat(){
+function onCheat(){
   cheat = true;
 }
